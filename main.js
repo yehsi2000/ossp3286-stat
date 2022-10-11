@@ -25,7 +25,7 @@ switch (command) {
         result = lib.sum(numbers);
         break;
     case "avg":
-        result = lib.avg(numbers);
+        result = lib.avg(numbers)+1;
         break;
     case "max":
         result = lib.max(numbers);
