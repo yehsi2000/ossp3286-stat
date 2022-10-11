@@ -1,11 +1,25 @@
 {
-  "name": "ossp3286",
+  "name": "ossp3286-stat",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yehsi2000/ossp3286.git"
+  },
   "author": "",
-  "license": "ISC"
+  "bin": {
+    "osspstat": "./main.js"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yehsi2000/ossp3286/issues"
+  },
+  "homepage": "https://github.com/yehsi2000/ossp3286#readme",
+  "devDependencies": {
+    "jest": "^29.1.2"
+  }
 }
