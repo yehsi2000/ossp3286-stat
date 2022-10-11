@@ -3,7 +3,7 @@ function sum(numbers){
 }
 
 function avg(numbers){
-    return sum(numbers)/numbers.length + 1;
+    return sum(numbers)/numbers.length;
 }
 
 function max(numbers){
