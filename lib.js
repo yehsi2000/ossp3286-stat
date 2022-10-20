@@ -19,8 +19,19 @@ function med(numbers){
     else return (numbers[len/2-1]+numbers[len/2])/2;
 }
 
+function iqr(numbers){
+    numbers.sort(function(a, b){ return a-b; });
+    let halflen = parseInt(numbers.length/2);
+    if(numbers.length%2)
+        return Math.abs( med(numbers.slice(0,halflen)) - med(numbers.slice(halflen+1,numbers.length)) );
+    else
+        return Math.abs( med(numbers.slice(0,halflen)) - med(numbers.slice(halflen,numbers.length)) );
+}
+
 module.exports = {
     sum,
     avg,
-    max
+    max,
+    med,
+    iqr
 }
