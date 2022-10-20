@@ -19,13 +19,32 @@ function med(numbers){
     else return (numbers[len/2-1]+numbers[len/2])/2;
 }
 
-function iqr(numbers){
+function q3(numbers){
+    let len = numbers.length;
+    let halflen = parseInt(len/2);
     numbers.sort(function(a, b){ return a-b; });
-    let halflen = parseInt(numbers.length/2);
-    if(numbers.length%2)
-        return Math.abs( med(numbers.slice(0,halflen)) - med(numbers.slice(halflen+1,numbers.length)) );
-    else
-        return Math.abs( med(numbers.slice(0,halflen)) - med(numbers.slice(halflen,numbers.length)) );
+    if(len%2) return med(numbers.slice(halflen+1,len));
+    else return med(numbers.slice(halflen,len));
+}
+
+function q1(numbers){
+    let len = numbers.length;
+    let halflen = parseInt(len/2);
+    numbers.sort(function(a, b){ return a-b; });
+    if(len%2) return med(numbers.slice(0,halflen));
+    else return med(numbers.slice(0,halflen));
+}
+
+function iqr(numbers){
+    return q3(numbers)-q1(numbers);
+}
+
+function outlier(numbers){
+    let originNumbers = numbers;
+    let outliers = originNumbers.filter(num => {
+        if( num < q1(numbers)-iqr(numbers)*1.5 || num > q3(numbers)+iqr(numbers)*1.5) return num;
+    });
+    return outliers;
 }
 
 module.exports = {
