@@ -52,5 +52,6 @@ module.exports = {
     avg,
     max,
     med,
-    iqr
+    iqr,
+    outlier
 }
