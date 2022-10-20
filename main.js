@@ -34,6 +34,6 @@ switch (command) {
         process.exit(1);
 }
 if(result.length>0)
-    result.forEach(console.log(result+"\n"));
+    result.forEach(res=>console.log(res));
 else if(result.length!=0)
     console.log(result);
