@@ -40,7 +40,7 @@ function iqr(numbers){
 }
 
 function outlier(numbers){
-    let originNumbers = numbers;
+    let originNumbers = numbers.slice();
     let outliers = originNumbers.filter(num => {
         if( num < q1(numbers)-iqr(numbers)*1.5 || num > q3(numbers)+iqr(numbers)*1.5) return num;
     });
