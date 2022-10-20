@@ -12,6 +12,13 @@ function max(numbers){
     return m;
 }
 
+function med(numbers){
+    let len = numbers.length;
+    numbers.sort(function(a, b){ return a-b; });
+    if(len%2) return numbers[parseInt(len/2)];
+    else return (numbers[len/2-1]+numbers[len/2])/2;
+}
+
 module.exports = {
     sum,
     avg,
